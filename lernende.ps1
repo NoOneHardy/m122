@@ -17,7 +17,13 @@ $vornamen = $vornamen.Replace("ö", "oe")
 $vornamen = $vornamen.Replace("é", "e")
 
 for ([int64]$int = 0; $int -lt $namen.Length; $int++) {
+    $vornamen2 = $vornamen[$int].Split(" ")
+    if ($vornamen2.Length -gt 1) {
+        $vornamen[$int] = $vornamen2[0]
+    }
     $foldername = $vornamen[$int] + '.' + $namen[$int]
     $path = 'C:\Users\no1ha\Downloads\' + $foldername
     New-Item -ItemType 'Directory' -Path $path
 }
+
+exit
