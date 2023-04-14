@@ -3,4 +3,7 @@ param(
     [Parameter(Mandatory=$true)][int32] $dif
 )
 
-1..$number | ForEach-Object {Start-Sleep -milliseconds $dif; Write-Host $_}
+for ($int = 1; $int -le $number; $int++) {
+    Start-Sleep -milliseconds $dif
+    Write-Host $int
+}
