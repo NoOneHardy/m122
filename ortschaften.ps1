@@ -1,5 +1,5 @@
 # CSV Datei laden
-$orte = Import-Csv -Path C:\Users\no1ha\Downloads\ort.csv -Delimiter ";"
+$orte = Import-Csv -Path ort.csv -Delimiter ";"
 
 # Hashable erstellen
 $ortschaften = @{}

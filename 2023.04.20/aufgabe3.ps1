@@ -1,4 +1,4 @@
-function process([bool]$ShowGrid) {
+function processes([bool]$ShowGrid) {
     $result = Get-Process | Where-Object {$_.MainWindowTitle -ne ""} | Select-Object -Property Id, ProcessName, Path
 
     if ($ShowGrid) {
@@ -8,4 +8,4 @@ function process([bool]$ShowGrid) {
     }
 }
 
-process $True
+processes $True

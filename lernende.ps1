@@ -5,7 +5,7 @@ Function: Get the date and create new Folders for each Object in the File
 #>
 
 # CSV Datei laden
-$lernende = Import-Csv -path C:\Users\no1ha\Downloads\lernende.csv -Delimiter ";"
+$lernende = Import-Csv -path lernende.csv -Delimiter ";"
 
 # Umlaute ersetzen
 $namen = $lernende.Name.Replace("ü", "ue")
@@ -26,6 +26,6 @@ for ([int64]$int = 0; $int -lt $namen.Length; $int++) {
 
     #Ordner erstellen
     $foldername = $vornamen[$int] + '.' + $namen[$int]
-    $path = 'C:\Users\no1ha\Downloads\' + $foldername
+    $path = 'C:\temp\' + $foldername
     New-Item -ItemType 'Directory' -Path $path
 }
